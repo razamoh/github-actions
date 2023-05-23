@@ -23,6 +23,6 @@ jobs:
           REMOTE_USER: ${{ secrets.USERNAME }}
           TARGET: ${{ secrets.TARGET_DIR }}
 
-      - name: Run commands with sudo
+      - name: Run commands on the server
         run: |
-          cd /tmp/site/ && sudo mv -f /tmp/site/* /usr/share/nginx/html/.
+          ssh -i path/to/private_key.pem ${{ secrets.USERNAME }}@${{ secrets.HOST_DNS }} "sudo mv -f  /tmp/site/* /usr/share/nginx/html/."
