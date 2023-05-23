@@ -25,4 +25,4 @@ jobs:
 
       - name: Run commands on the server
         run: |
-          ssh -i path/to/private_key.pem ${{ secrets.USERNAME }}@${{ secrets.HOST_DNS }} "sudo mv -f  /tmp/site/* /usr/share/nginx/html/."
+          ssh -i ${{ secrets.TERRAFORM_KEY }} ${{ secrets.USERNAME }}@${{ secrets.HOST_DNS }} "sudo mv -f  /tmp/site/* /usr/share/nginx/html/."
