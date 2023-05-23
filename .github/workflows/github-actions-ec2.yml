@@ -22,3 +22,6 @@ jobs:
           REMOTE_HOST: ${{ secrets.HOST_DNS }}
           REMOTE_USER: ${{ secrets.USERNAME }}
           TARGET: ${{ secrets.TARGET_DIR }}
+      - name: Run commands with sudo
+        run: |
+          sudo mv -f  /tmp/site/* /usr/share/nginx/html/.
