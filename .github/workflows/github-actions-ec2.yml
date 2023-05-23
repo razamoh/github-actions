@@ -25,6 +25,6 @@ jobs:
 
       - name: Run commands on the server
         run: |
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > private_key.pem
+          echo "${{ secrets.TERRAFORM_KEY }}" > private_key.pem
           chmod 600 private_key.pem
           ssh -i private_key.pem ${{ secrets.USERNAME }}@${{ secrets.HOST_DNS }} "sudo mv -f  /tmp/site/* /usr/share/nginx/html/."
