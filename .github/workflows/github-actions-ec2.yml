@@ -27,4 +27,4 @@ jobs:
         run: |
           echo "${{ secrets.TERRAFORM_KEY }}" > private_key.pem
           chmod 600 private_key.pem
-          ssh -i private_key.pem ${{ vars.USERNAME }}@${{ vars.HOST_DNS }} "sudo rm -rf /usr/share/nginx/html/* && sudo mv -f   ${{ vars.HOST_DNS }}/* /usr/share/nginx/html/."
+          ssh -i private_key.pem ${{ vars.USERNAME }}@${{ vars.HOST_DNS }} "sudo rm -rf /usr/share/nginx/html/* && sudo mv -f   ${{ vars.TARGET_DIR }}/* /usr/share/nginx/html/."
