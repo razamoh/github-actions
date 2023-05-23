@@ -24,4 +24,4 @@ jobs:
           TARGET: ${{ secrets.TARGET_DIR }}
       - name: Run commands with sudo
         run: |
-					cd /tmp/site/ && sudo mv -f  /tmp/site/* /usr/share/nginx/html/.
+	  cd /tmp/site/ && sudo mv -f  /tmp/site/* /usr/share/nginx/html/.
