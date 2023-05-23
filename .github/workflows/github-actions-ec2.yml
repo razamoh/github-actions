@@ -1,11 +1,11 @@
 name: Push-to-EC2
 
-# Trigger deployment only on push to master branch
 on:
   push:
     branches:
       - main
   workflow_dispatch:
+
 jobs:
   deploy:
     name: Deploy to EC2 on main branch push
@@ -22,6 +22,7 @@ jobs:
           REMOTE_HOST: ${{ secrets.HOST_DNS }}
           REMOTE_USER: ${{ secrets.USERNAME }}
           TARGET: ${{ secrets.TARGET_DIR }}
+
       - name: Run commands with sudo
         run: |
-	 cd /tmp/site/ && sudo mv -f /tmp/site/* /usr/share/nginx/html/.
+          cd /tmp/site/ && sudo mv -f /tmp/site/* /usr/share/nginx/html/.
